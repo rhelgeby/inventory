@@ -1,0 +1,18 @@
+# Build
+bin/
+build/
+target/
+
+# JAXB generated code
+*.episode
+*.factorypath
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+.recommenders/
+
+# Mac OS X
+.DS_Store

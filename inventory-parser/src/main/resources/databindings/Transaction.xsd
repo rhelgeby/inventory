@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+		targetNamespace="http://helgeby.no/inventory/Transaction" 
+		xmlns:tns="http://helgeby.no/inventory/Transaction"
+		xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+		elementFormDefault="qualified">
+
+	<element name="transactionLine" type="tns:TransactionLine"></element>
+
+	<complexType name="TransactionLine">
+		<sequence>
+			<element name="date" type="date" minOccurs="1" maxOccurs="1"></element>			
+			<element name="description" type="string" minOccurs="1" maxOccurs="1"></element>
+			<element name="interestDate" type="date" minOccurs="1" maxOccurs="1"></element>
+			<element name="withdrawal" type="decimal" minOccurs="1" maxOccurs="1"></element>
+			<element name="deposit" type="decimal" minOccurs="1" maxOccurs="1"></element>
+		</sequence>
+	</complexType>
+</schema>

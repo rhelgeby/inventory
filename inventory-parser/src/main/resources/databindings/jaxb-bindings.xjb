@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+	version="2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:inheritance="http://jaxb2-commons.dev.java.net/basic/inheritance"
+	jaxb:extensionBindingPrefixes="xjc inheritance">
+
+	<jaxb:bindings schemaLocation="TransactionLine.xsd">
+		<jaxb:schemaBindings>
+			<jaxb:package name="no.helgeby.inventory.parser.xml"/>
+		</jaxb:schemaBindings>
+		<jaxb:bindings node="//*[@name='TransactionLine']">
+	       <inheritance:extends>no.helgeby.inventory.parser.AbstractTransactionLine</inheritance:extends> 
+		</jaxb:bindings>
+	</jaxb:bindings>
+</jaxb:bindings>
