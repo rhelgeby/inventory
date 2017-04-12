@@ -25,12 +25,12 @@ public class TransactionParser {
 	private static final String COLUMN_SEPARATOR = ";";
 	private static final String COLUMN_QUOTE = "\"";
 
-	private List<ColumnDefinition> columnDefinitions;
+	private List<TransactionColumn> columnDefinitions;
 	private boolean quotedColumns;
 	private DateFormat dateFormat;
 	private boolean skipFirstLine = false;
 
-	public TransactionParser(List<ColumnDefinition> columnDefinitions, boolean quotedColumns, String dateFormat) {
+	public TransactionParser(List<TransactionColumn> columnDefinitions, boolean quotedColumns, String dateFormat) {
 		this.columnDefinitions = columnDefinitions;
 		this.quotedColumns = quotedColumns;
 		this.dateFormat = new SimpleDateFormat(dateFormat);
@@ -64,10 +64,12 @@ public class TransactionParser {
 			if (StringUtils.isBlank(column)) {
 				continue;
 			}
-			ColumnDefinition definition = columnDefinitions.get(i);
+			TransactionColumn definition = columnDefinitions.get(i);
 
 			try {
 				switch (definition.getType()) {
+				case SKIP:
+					break;
 				case DATE:
 					transaction.setDate(parseDate(column));
 					break;

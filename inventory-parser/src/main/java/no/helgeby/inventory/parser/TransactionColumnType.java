@@ -1,6 +1,7 @@
 package no.helgeby.inventory.parser;
 
-public enum ColumnType {
+public enum TransactionColumnType {
+	SKIP,
 	DATE,
 	DESCRIPTION,
 	INTEREST_DATE,

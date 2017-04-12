@@ -14,18 +14,18 @@ import no.helgeby.inventory.model.Transaction;
 
 public class TransactionFileParserTest {
 
-	private List<ColumnDefinition> columns;
+	private List<TransactionColumn> columns;
 	private TransactionParser parser;
 
 	@Before
 	public void setUp() {
 		columns = new ArrayList<>();
-		columns.add(new ColumnDefinition("Date", ColumnType.DATE));
-		columns.add(new ColumnDefinition("Description", ColumnType.DESCRIPTION));
-		columns.add(new ColumnDefinition("Interest Date",
-				ColumnType.INTEREST_DATE));
-		columns.add(new ColumnDefinition("Withdrawal", ColumnType.WITHDRAWAL));
-		columns.add(new ColumnDefinition("Deposit", ColumnType.DEPOSIT));
+		columns.add(new TransactionColumn("Date", TransactionColumnType.DATE));
+		columns.add(new TransactionColumn("Description", TransactionColumnType.DESCRIPTION));
+		columns.add(new TransactionColumn("Interest Date",
+				TransactionColumnType.INTEREST_DATE));
+		columns.add(new TransactionColumn("Withdrawal", TransactionColumnType.WITHDRAWAL));
+		columns.add(new TransactionColumn("Deposit", TransactionColumnType.DEPOSIT));
 
 		final String dateFormat = "dd.MM.yyyy";
 		parser = new TransactionParser(columns, true, dateFormat);

@@ -1,15 +1,15 @@
 package no.helgeby.inventory.parser;
 
-public class ColumnDefinition {
+public class TransactionColumn {
 
 	private String name;
-	private ColumnType type;
+	private TransactionColumnType type;
 
-	public ColumnDefinition() {
+	public TransactionColumn() {
 
 	}
 
-	public ColumnDefinition(String name, ColumnType type) {
+	public TransactionColumn(String name, TransactionColumnType type) {
 		this.name = name;
 		this.type = type;
 	}
@@ -22,11 +22,11 @@ public class ColumnDefinition {
 		this.name = name;
 	}
 
-	public ColumnType getType() {
+	public TransactionColumnType getType() {
 		return type;
 	}
 
-	public void setType(ColumnType type) {
+	public void setType(TransactionColumnType type) {
 		this.type = type;
 	}
 

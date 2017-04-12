@@ -11,8 +11,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import no.helgeby.inventory.model.Transaction;
-import no.helgeby.inventory.parser.ColumnDefinition;
-import no.helgeby.inventory.parser.ColumnType;
+import no.helgeby.inventory.parser.TransactionColumn;
+import no.helgeby.inventory.parser.TransactionColumnType;
 import no.helgeby.inventory.parser.TransactionParser;
 
 public class Sandbox {
@@ -24,13 +24,13 @@ public class Sandbox {
 				Sandbox.class.getResourceAsStream("/transactions.csv"));
 		BufferedReader reader = new BufferedReader(inputStreamReader);
 
-		List<ColumnDefinition> columns = new ArrayList<>();
-		columns.add(new ColumnDefinition("Date", ColumnType.DATE));
-		columns.add(new ColumnDefinition("Description", ColumnType.DESCRIPTION));
-		columns.add(new ColumnDefinition("Interest Date",
-				ColumnType.INTEREST_DATE));
-		columns.add(new ColumnDefinition("Withdrawal", ColumnType.WITHDRAWAL));
-		columns.add(new ColumnDefinition("Deposit", ColumnType.DEPOSIT));
+		List<TransactionColumn> columns = new ArrayList<>();
+		columns.add(new TransactionColumn("Date", TransactionColumnType.DATE));
+		columns.add(new TransactionColumn("Description", TransactionColumnType.DESCRIPTION));
+		columns.add(new TransactionColumn("Interest Date",
+				TransactionColumnType.INTEREST_DATE));
+		columns.add(new TransactionColumn("Withdrawal", TransactionColumnType.WITHDRAWAL));
+		columns.add(new TransactionColumn("Deposit", TransactionColumnType.DEPOSIT));
 
 		final String dateFormat = "dd.MM.yyyy";
 		TransactionParser parser = new TransactionParser(columns, true, dateFormat);
