@@ -16,3 +16,5 @@ target/
 
 # Mac OS X
 .DS_Store
+
+inventory-console/dependency-reduced-pom.xml
