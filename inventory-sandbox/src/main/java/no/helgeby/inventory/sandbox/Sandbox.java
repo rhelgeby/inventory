@@ -33,8 +33,7 @@ public class Sandbox {
 		columns.add(new ColumnDefinition("Deposit", ColumnType.DEPOSIT));
 
 		final String dateFormat = "dd.MM.yyyy";
-		TransactionParser parser = new TransactionParser(columns, true,
-				dateFormat);
+		TransactionParser parser = new TransactionParser(columns, true, dateFormat);
 
 		parser.setSkipFirstLine(true);
 		try {

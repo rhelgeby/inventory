@@ -64,9 +64,8 @@ public class ConsoleTest {
 			BasicWindow window = new BasicWindow();
 			window.setComponent(panel);
 
-			MultiWindowTextGUI gui = new MultiWindowTextGUI(screen,
-					new DefaultWindowManager(), new EmptySpace(
-							TextColor.ANSI.BLUE));
+			MultiWindowTextGUI gui = new MultiWindowTextGUI(screen, new DefaultWindowManager(),
+					new EmptySpace(TextColor.ANSI.BLUE));
 			gui.addWindowAndWait(window);
 		} catch (IOException e) {
 			logger.error("IO error in terminal.", e);

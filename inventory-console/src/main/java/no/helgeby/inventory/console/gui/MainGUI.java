@@ -14,7 +14,7 @@ import no.helgeby.inventory.console.gui.window.MainMenuWindow;
 public class MainGUI extends MultiWindowTextGUI {
 
 	private BasicWindow menuWindow;
-	
+
 	public static MainGUI create(Screen screen) {
 		MainGUI mainWindow = new MainGUI(screen, new DefaultWindowManager(), new EmptySpace(TextColor.ANSI.CYAN));
 		return mainWindow;

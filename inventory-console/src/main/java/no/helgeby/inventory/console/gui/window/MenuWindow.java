@@ -20,7 +20,7 @@ public abstract class MenuWindow extends BasicWindow {
 	public MenuWindow() {
 		super();
 		panel = new Panel();
-		
+
 		GridLayout layout = new GridLayout(2);
 		layout.setTopMarginSize(1);
 		layout.setBottomMarginSize(1);
@@ -29,7 +29,7 @@ public abstract class MenuWindow extends BasicWindow {
 		layout.setHorizontalSpacing(2);
 		layout.setVerticalSpacing(1);
 		panel.setLayoutManager(layout);
-		
+
 		this.setComponent(panel);
 		buttons = new ArrayList<>();
 	}
@@ -46,6 +46,7 @@ public abstract class MenuWindow extends BasicWindow {
 	private class MenuActionListener implements Runnable {
 
 		private String actionName;
+
 		private MenuActionListener(String actionName) {
 			this.actionName = actionName;
 		}
@@ -54,7 +55,7 @@ public abstract class MenuWindow extends BasicWindow {
 		public void run() {
 			actionListener.onMenuAction(actionName);
 		}
-		
+
 	}
 
 	public void setActionListener(MenuAction actionListener) {

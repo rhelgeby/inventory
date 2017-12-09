@@ -20,8 +20,7 @@ import no.helgeby.inventory.model.Transaction;
 
 public class TransactionParser {
 
-	private static final Log logger = LogFactory
-			.getLog(TransactionParser.class);
+	private static final Log logger = LogFactory.getLog(TransactionParser.class);
 
 	private static final String COLUMN_SEPARATOR = ";";
 	private static final String COLUMN_QUOTE = "\"";
@@ -31,8 +30,7 @@ public class TransactionParser {
 	private DateFormat dateFormat;
 	private boolean skipFirstLine = false;
 
-	public TransactionParser(List<ColumnDefinition> columnDefinitions,
-			boolean quotedColumns, String dateFormat) {
+	public TransactionParser(List<ColumnDefinition> columnDefinitions, boolean quotedColumns, String dateFormat) {
 		this.columnDefinitions = columnDefinitions;
 		this.quotedColumns = quotedColumns;
 		this.dateFormat = new SimpleDateFormat(dateFormat);
@@ -86,12 +84,10 @@ public class TransactionParser {
 					transaction.setDeposit(parseNumber(column));
 					break;
 				default:
-					logger.warn("Unknown type for column at index " + i + ": "
-							+ definition.getType());
+					logger.warn("Unknown type for column at index " + i + ": " + definition.getType());
 				}
 			} catch (ParseException ex) {
-				logger.warn("Failed to parse column at index " + i + ": "
-						+ column);
+				logger.warn("Failed to parse column at index " + i + ": " + column);
 			}
 		}
 		return transaction;

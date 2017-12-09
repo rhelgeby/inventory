@@ -3,10 +3,10 @@ package no.helgeby.inventory.console.gui.window;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class MainMenuWindow extends MenuWindow implements MenuAction{
+public class MainMenuWindow extends MenuWindow implements MenuAction {
 
 	private static final Log logger = LogFactory.getLog(MainMenuWindow.class);
-	
+
 	public MainMenuWindow() {
 		this.setTitle("Inventory Main Menu");
 

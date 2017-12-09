@@ -21,7 +21,6 @@ public class Transaction {
 	private long fromAccountId;
 	private long toAccountId;
 
-
 	public Date getDate() {
 		return date;
 	}
