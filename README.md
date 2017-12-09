@@ -1,2 +1,2 @@
 # inventory
-Experimental application for making a DDD-architecture.
+Application for organizing property.
