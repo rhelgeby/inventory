@@ -11,8 +11,11 @@ public class InventoryMenuWindow extends MenuWindow implements MenuAction {
 		this.setTitle("Inventory");
 
 		addMenuItem("Product types", "Manage product types.", "productTypes");
+		addMenuItem("Close", "Closes the inventory.", "close");
 
 		setFocusedInteractable(buttons.get(0));
+		setActionListener(this);
+		setCloseWindowWithEscape(true);
 	}
 
 	@Override
@@ -21,6 +24,9 @@ public class InventoryMenuWindow extends MenuWindow implements MenuAction {
 		case "productTypes":
 			onProductTypesClicked();
 			break;
+		case "close":
+			onCloseClicked();
+			break;
 		default:
 			throw new IllegalArgumentException("Unexpected action name: " + actionName);
 		}
@@ -28,5 +34,9 @@ public class InventoryMenuWindow extends MenuWindow implements MenuAction {
 
 	private void onProductTypesClicked() {
 		logger.info("Product types clicked.");
+	}
+
+	private void onCloseClicked() {
+		this.close();
 	}
 }

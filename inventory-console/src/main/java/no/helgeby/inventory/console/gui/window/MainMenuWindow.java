@@ -1,13 +1,10 @@
 package no.helgeby.inventory.console.gui.window;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import java.util.Arrays;
 
-public class MainMenuWindow extends MenuWindow implements MenuAction {
+public class MainMenuWindow extends MenuWindow {
 
-	private static final Log logger = LogFactory.getLog(MainMenuWindow.class);
-
-	public MainMenuWindow() {
+	public MainMenuWindow(MenuAction actionListener) {
 		this.setTitle("Inventory Main Menu");
 
 		addMenuItem("New", "Creates a new inventory database.", "new");
@@ -15,35 +12,8 @@ public class MainMenuWindow extends MenuWindow implements MenuAction {
 		addMenuItem("Exit", "Terminates the application.", "exit");
 
 		setFocusedInteractable(buttons.get(0));
-		setActionListener(this);
+		setActionListener(actionListener);
+		setHints(Arrays.asList(Hint.CENTERED));
 	}
 
-	@Override
-	public void onMenuAction(String actionName) {
-		switch (actionName) {
-		case "new":
-			onNewClicked();
-			break;
-		case "open":
-			onOpenClicked();
-			break;
-		case "exit":
-			onExitClicked();
-			break;
-		default:
-			throw new IllegalArgumentException("Unexpected action name: " + actionName);
-		}
-	}
-
-	private void onNewClicked() {
-		logger.info("New clicked.");
-	}
-
-	private void onOpenClicked() {
-		logger.info("Open clicked.");
-	}
-
-	private void onExitClicked() {
-		MainMenuWindow.this.close();
-	}
 }

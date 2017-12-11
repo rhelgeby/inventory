@@ -35,27 +35,12 @@ public abstract class MenuWindow extends BasicWindow {
 	}
 
 	public void addMenuItem(String title, String description, String actionName) {
-		Button button = new Button(title, new MenuActionListener(actionName));
+		Button button = new Button(title, () -> actionListener.onMenuAction(actionName));
 		buttons.add(button);
 		panel.addComponent(button);
 		Label label = new Label(description);
 		label.setForegroundColor(TextColor.ANSI.BLUE);
 		panel.addComponent(label);
-	}
-
-	private class MenuActionListener implements Runnable {
-
-		private String actionName;
-
-		private MenuActionListener(String actionName) {
-			this.actionName = actionName;
-		}
-
-		@Override
-		public void run() {
-			actionListener.onMenuAction(actionName);
-		}
-
 	}
 
 	public void setActionListener(MenuAction actionListener) {
