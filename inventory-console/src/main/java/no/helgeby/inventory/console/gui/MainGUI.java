@@ -15,6 +15,7 @@ import com.googlecode.lanterna.screen.Screen;
 import no.helgeby.inventory.console.gui.window.InventoryMenuWindow;
 import no.helgeby.inventory.console.gui.window.MainMenuWindow;
 import no.helgeby.inventory.console.gui.window.MenuAction;
+import no.helgeby.inventory.console.gui.window.ProductTypeWindow;
 
 public class MainGUI extends MultiWindowTextGUI implements MenuAction {
 
@@ -58,8 +59,10 @@ public class MainGUI extends MultiWindowTextGUI implements MenuAction {
 
 	private void onNewClicked() {
 		logger.info("New clicked.");
-		InventoryMenuWindow inventoryMenuWindow = new InventoryMenuWindow();
-		addWindow(inventoryMenuWindow);
+//		InventoryMenuWindow inventoryMenuWindow = new InventoryMenuWindow();
+//		addWindow(inventoryMenuWindow);
+		ProductTypeWindow productTypeWindow = new ProductTypeWindow();
+		addWindow(productTypeWindow);
 	}
 
 	private void onOpenClicked() {
