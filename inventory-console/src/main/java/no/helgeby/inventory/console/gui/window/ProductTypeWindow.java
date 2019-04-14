@@ -33,7 +33,7 @@ public class ProductTypeWindow extends BasicWindow {
 		AbsoluteLayout layout = new AbsoluteLayout();
 		mainPanel.setLayoutManager(layout);
 
-		Table<String> table = new Table<>("ID", "Name", "Description");
+		Table<String> table = new Table<>("ID", "Description");
 		// Wrap the renderer with our own extensions.
 		ExtendedTableRenderer<String> tableRenderer = new ExtendedTableRenderer<>(table.getRenderer());
 		table.setRenderer(tableRenderer);
@@ -122,12 +122,11 @@ public class ProductTypeWindow extends BasicWindow {
 	private ProductType getDummyProductType(int number) {
 		ProductType productType = new ProductType();
 		productType.setId(number);
-		productType.setName("dummy" + number);
 		productType.setDescription("A dummy product type.");
 		return productType;
 	}
 
 	private String[] getProductTypeValues(ProductType type) {
-		return new String[] { String.valueOf(type.getId()), type.getName(), type.getDescription() };
+		return new String[] { String.valueOf(type.getId()), type.getDescription() };
 	}
 }
