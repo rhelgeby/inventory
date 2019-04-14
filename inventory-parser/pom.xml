@@ -123,7 +123,7 @@
 		</dependency>
         <dependency>
         	<groupId>no.helgeby.inventory</groupId>
-        	<artifactId>inventory-model</artifactId>
+        	<artifactId>inventory-core</artifactId>
         	<version>0.0.1-SNAPSHOT</version>
         </dependency>
 	</dependencies>
