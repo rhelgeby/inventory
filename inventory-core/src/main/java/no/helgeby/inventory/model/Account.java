@@ -2,7 +2,7 @@ package no.helgeby.inventory.model;
 
 public class Account {
 
-	private long id;
+	private long id = -1;
 	private String name;
 
 	public long getId() {
@@ -21,4 +21,19 @@ public class Account {
 		this.name = name;
 	}
 
+	public boolean hasId() {
+		return id >= 0;
+	}
+
+	public boolean equals(Object other) {
+		if (!(other instanceof Account)) {
+			return false;
+		}
+		Account otherAccount = (Account) other;
+		return getId() == otherAccount.getId();
+	}
+
+	public int hashCode() {
+		return Long.hashCode(id);
+	}
 }
