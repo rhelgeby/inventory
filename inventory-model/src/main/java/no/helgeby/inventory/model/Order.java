@@ -8,28 +8,27 @@ import java.util.List;
  */
 public class Order {
 
-	private long orderId;
-	private String vendorOrderId;
+	private long id;
+	private String orderRef;
 	private Date orderDate;
-	private String vendorName;
-	private long ownerId;
-	private long transactionId;
-	private List<OrderItem> orderItems;
+	private long fromAccountId;
+	private long toAccountId;
+	private List<OrderLine> orderLines;
 
 	public long getOrderId() {
-		return orderId;
+		return id;
 	}
 
-	public void setOrderId(long orderId) {
-		this.orderId = orderId;
+	public void setId(long id) {
+		this.id = id;
 	}
 
-	public String getVendorOrderId() {
-		return vendorOrderId;
+	public String getOrderRef() {
+		return orderRef;
 	}
 
-	public void setVendorOrderId(String vendorOrderId) {
-		this.vendorOrderId = vendorOrderId;
+	public void setOrderRef(String orderRef) {
+		this.orderRef = orderRef;
 	}
 
 	public Date getOrderDate() {
@@ -40,36 +39,28 @@ public class Order {
 		this.orderDate = orderDate;
 	}
 
-	public String getVendorName() {
-		return vendorName;
+	public long getFromAccountId() {
+		return fromAccountId;
 	}
 
-	public void setVendorName(String vendorName) {
-		this.vendorName = vendorName;
+	public void setFromAccountId(long fromAccountId) {
+		this.fromAccountId = fromAccountId;
 	}
 
-	public long getOwnerId() {
-		return ownerId;
+	public long getToAccountId() {
+		return toAccountId;
 	}
 
-	public void setOwnerId(long ownerId) {
-		this.ownerId = ownerId;
+	public void setToAccountId(long toAccountId) {
+		this.toAccountId = toAccountId;
 	}
 
-	public long getTransactionId() {
-		return transactionId;
+	public List<OrderLine> getOrderLines() {
+		return orderLines;
 	}
 
-	public void setTransactionId(long transactionId) {
-		this.transactionId = transactionId;
-	}
-
-	public List<OrderItem> getOrderItems() {
-		return orderItems;
-	}
-
-	public void setOrderItems(List<OrderItem> orderItems) {
-		this.orderItems = orderItems;
+	public void setOrderLines(List<OrderLine> orderLines) {
+		this.orderLines = orderLines;
 	}
 
 }

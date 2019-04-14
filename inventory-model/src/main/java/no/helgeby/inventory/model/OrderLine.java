@@ -5,14 +5,22 @@ import java.math.BigDecimal;
 /**
  * Items included in an order.
  */
-public class OrderItem {
+public class OrderLine {
 
+	private long id;
 	private long orderId;
-	private long orderLineId;
 	private long productId;
-	private long quantity;
+	private BigDecimal quantity;
 	private BigDecimal unitPrice;
 	private String notes;
+	
+	public long getId() {
+		return id;
+	}
+	
+	public void setId(long id) {
+		this.id = id;
+	}
 
 	public long getOrderId() {
 		return orderId;
@@ -20,14 +28,6 @@ public class OrderItem {
 
 	public void setOrderId(long orderId) {
 		this.orderId = orderId;
-	}
-
-	public long getOrderLineId() {
-		return orderLineId;
-	}
-
-	public void setOrderLineId(long orderLineId) {
-		this.orderLineId = orderLineId;
 	}
 
 	public long getProductId() {
@@ -38,11 +38,11 @@ public class OrderItem {
 		this.productId = productId;
 	}
 
-	public long getQuantity() {
+	public BigDecimal getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(long quantity) {
+	public void setQuantity(BigDecimal quantity) {
 		this.quantity = quantity;
 	}
 

@@ -121,13 +121,13 @@ public class ProductTypeWindow extends BasicWindow {
 
 	private ProductType getDummyProductType(int number) {
 		ProductType productType = new ProductType();
-		productType.setTypeId(number);
+		productType.setId(number);
 		productType.setName("dummy" + number);
 		productType.setDescription("A dummy product type.");
 		return productType;
 	}
 
 	private String[] getProductTypeValues(ProductType type) {
-		return new String[] { String.valueOf(type.getTypeId()), type.getName(), type.getDescription() };
+		return new String[] { String.valueOf(type.getId()), type.getName(), type.getDescription() };
 	}
 }

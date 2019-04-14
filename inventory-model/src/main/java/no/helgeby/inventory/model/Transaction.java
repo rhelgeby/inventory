@@ -6,20 +6,41 @@ import java.util.Date;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-/**
- * A financial transaction.
- */
 public class Transaction {
 
 	public static final ToStringStyle TO_STRING_STYLE = ToStringStyle.JSON_STYLE;
 
+	private long id;
+	private long orderLineId;
+	private long accountId;
 	private Date date;
-	private String description;
-	private Date interestDate;
-	private BigDecimal withdrawal;
-	private BigDecimal deposit;
-	private long fromAccountId;
-	private long toAccountId;
+	private long productId;
+	private BigDecimal amount;
+	private String notes;
+
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public long getOrderLineId() {
+		return orderLineId;
+	}
+
+	public void setOrderLineId(long orderLineId) {
+		this.orderLineId = orderLineId;
+	}
+
+	public long getAccountId() {
+		return accountId;
+	}
+
+	public void setAccountId(long accountId) {
+		this.accountId = accountId;
+	}
 
 	public Date getDate() {
 		return date;
@@ -29,63 +50,39 @@ public class Transaction {
 		this.date = date;
 	}
 
-	public String getDescription() {
-		return description;
+	public long getProductId() {
+		return productId;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setProductId(long productId) {
+		this.productId = productId;
 	}
 
-	public Date getInterestDate() {
-		return interestDate;
+	public BigDecimal getAmount() {
+		return amount;
 	}
 
-	public void setInterestDate(Date interestDate) {
-		this.interestDate = interestDate;
+	public void setAmount(BigDecimal amount) {
+		this.amount = amount;
 	}
 
-	public BigDecimal getWithdrawal() {
-		return withdrawal;
+	public String getNotes() {
+		return notes;
 	}
 
-	public void setWithdrawal(BigDecimal withdrawal) {
-		this.withdrawal = withdrawal;
-	}
-
-	public BigDecimal getDeposit() {
-		return deposit;
-	}
-
-	public void setDeposit(BigDecimal deposit) {
-		this.deposit = deposit;
-	}
-
-	public long getFromAccountId() {
-		return fromAccountId;
-	}
-
-	public void setFromAccountId(long fromAccountId) {
-		this.fromAccountId = fromAccountId;
-	}
-
-	public long getToAccountId() {
-		return toAccountId;
-	}
-
-	public void setToAccountId(long toAccountId) {
-		this.toAccountId = toAccountId;
+	public void setNotes(String notes) {
+		this.notes = notes;
 	}
 
 	public String toString() {
 		return new ToStringBuilder(this, TO_STRING_STYLE)
+				.append("id", getId())
+				.append("orderLineId", getOrderLineId())
+				.append("accountId", getAccountId())
 				.append("date", getDate())
-				.append("fromAccountId", getFromAccountId())
-				.append("toAccountId", getToAccountId())
-				.append("description", getDescription())
-				.append("interestDate", getInterestDate())
-				.append("withdrawal", getWithdrawal())
-				.append("deposit", getDeposit())
+				.append("productId", getProductId())
+				.append("amount", getAmount())
+				.append("notes", getNotes())
 				.toString();
 	}
 }

@@ -2,24 +2,15 @@ package no.helgeby.inventory.model;
 
 public class ProductType {
 
-	private long typeId;
-	private String name;
+	private long id;
 	private String description;
 
-	public long getTypeId() {
-		return typeId;
+	public long getId() {
+		return id;
 	}
 
-	public void setTypeId(long typeId) {
-		this.typeId = typeId;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setId(long id) {
+		this.id = id;
 	}
 
 	public String getDescription() {

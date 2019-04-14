@@ -1,18 +1,21 @@
 package no.helgeby.inventory.model;
 
+import java.math.BigDecimal;
+
 public class Product {
 
-	private long productId;
+	private long id;
 	private long productTypeId;
-	private String name;
 	private String description;
+	private BigDecimal netWeight;
+	private String weightUnit;
 
 	public long getProductId() {
-		return productId;
+		return id;
 	}
 
 	public void setProductId(long productId) {
-		this.productId = productId;
+		this.id = productId;
 	}
 
 	public long getProductTypeId() {
@@ -23,14 +26,6 @@ public class Product {
 		this.productTypeId = productTypeId;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public String getDescription() {
 		return description;
 	}
@@ -39,4 +34,19 @@ public class Product {
 		this.description = description;
 	}
 
+	public void setNetWeight(BigDecimal netWeight) {
+		this.netWeight = netWeight;
+	}
+
+	public BigDecimal getNetWeight() {
+		return netWeight;
+	}
+
+	public void setWeightUnit(String weightUnit) {
+		this.weightUnit = weightUnit;
+	}
+
+	public String getWeightUnit() {
+		return weightUnit;
+	}
 }
