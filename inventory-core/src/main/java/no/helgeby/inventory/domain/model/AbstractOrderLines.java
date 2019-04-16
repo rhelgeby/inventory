@@ -24,8 +24,11 @@ public abstract class AbstractOrderLines<T extends OrderLine> implements OrderLi
 
 		CurrencyConversion currencyConversion = MonetaryConversions.getConversion(targetCurrency);
 		for (OrderLine line : orderLines) {
-			MonetaryAmount convertedPrice = line.getUnitPrice().with(currencyConversion);
-			total = total.add(convertedPrice.multiply(line.getAmount()));
+			MonetaryAmount unitPrice = line.getUnitPrice();
+			if (!unitPrice.getCurrency().equals(targetCurrency)) {
+				unitPrice = unitPrice.with(currencyConversion);
+			}
+			total = total.add(unitPrice.multiply(line.getAmount()));
 		}
 
 		return total;
