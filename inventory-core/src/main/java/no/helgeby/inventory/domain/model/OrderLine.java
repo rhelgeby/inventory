@@ -10,7 +10,7 @@ public interface OrderLine {
 
 	BigDecimal getAmount();
 
-	MonetaryAmount getUnitPrice();
+	SimpleMonetaryAmount getUnitPrice();
 
 	String getNotes();
 

@@ -9,7 +9,7 @@ public interface OrderLines {
 
 	List<OrderLine> getOrderLines();
 
-	MonetaryAmount getTotalPrice(Currency targetCurrency, CurrencyConverter converter)
+	SimpleMonetaryAmount getTotalPrice(Currency targetCurrency, CurrencyConverter converter)
 			throws CurrencyException;
 
 }

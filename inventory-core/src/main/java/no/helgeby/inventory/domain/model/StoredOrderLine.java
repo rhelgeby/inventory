@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 public abstract class StoredOrderLine extends AbstractOrderLine {
 
 	public StoredOrderLine(OrderLineCode code, ProductCode productCode, BigDecimal amount,
-			MonetaryAmount unitPrice, String notes) {
+			SimpleMonetaryAmount unitPrice, String notes) {
 		if (code == null) {
 			throw new IllegalArgumentException("Code must not be null.");
 		}

@@ -16,7 +16,7 @@ public class DraftOrderLine extends AbstractOrderLine {
 		this.amount = amount;
 	}
 
-	public void setUnitPrice(MonetaryAmount unitPrice) {
+	public void setUnitPrice(SimpleMonetaryAmount unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 

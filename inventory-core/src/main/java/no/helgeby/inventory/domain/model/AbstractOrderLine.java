@@ -7,7 +7,7 @@ public abstract class AbstractOrderLine implements OrderLine {
 	protected OrderLineCode code;
 	protected ProductCode productCode;
 	protected BigDecimal amount;
-	protected MonetaryAmount unitPrice;
+	protected SimpleMonetaryAmount unitPrice;
 	protected String notes;
 
 	@Override
@@ -26,7 +26,7 @@ public abstract class AbstractOrderLine implements OrderLine {
 	}
 
 	@Override
-	public MonetaryAmount getUnitPrice() {
+	public SimpleMonetaryAmount getUnitPrice() {
 		return unitPrice;
 	}
 
