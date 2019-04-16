@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 import javax.money.MonetaryAmount;
 
-public abstract class StoredOrderLine extends AbstractOrderLine {
+public class StoredOrderLine extends AbstractOrderLine {
 
 	public StoredOrderLine(OrderLineCode code, ProductCode productCode, BigDecimal amount,
 			MonetaryAmount unitPrice, String notes) {

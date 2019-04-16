@@ -3,7 +3,7 @@ package no.helgeby.inventory.domain.model;
 import java.time.Instant;
 import java.util.List;
 
-public abstract class StoredTransaction extends AbstractTransaction {
+public abstract class StoredTransaction extends AbstractTransaction<StoredTransactionItem> {
 
 	public StoredTransaction(TransactionCode code, Instant date, List<StoredTransactionItem> items) {
 		if (code == null) {

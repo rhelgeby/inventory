@@ -2,7 +2,7 @@ package no.helgeby.inventory.domain.model;
 
 import java.util.List;
 
-public class StoredOrderLines extends AbstractOrderLines {
+public class StoredOrderLines extends AbstractOrderLines<StoredOrderLine> {
 
 	public StoredOrderLines(List<StoredOrderLine> orderLines) {
 		if (orderLines == null || orderLines.isEmpty()) {
