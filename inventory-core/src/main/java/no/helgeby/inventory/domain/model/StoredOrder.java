@@ -4,7 +4,11 @@ import java.time.Instant;
 
 public class StoredOrder extends AbstractOrder {
 
-	public StoredOrder(Instant date, AccountCode fromAccount, AccountCode toAccount, String reference, String notes) {
+	public StoredOrder(OrderCode code, Instant date, AccountCode fromAccount, AccountCode toAccount,
+			String reference, String notes) {
+		if (code == null) {
+			throw new IllegalArgumentException("Code must not be null.");
+		}
 		if (date == null) {
 			throw new IllegalArgumentException("Order date must not be null.");
 		}
@@ -14,6 +18,7 @@ public class StoredOrder extends AbstractOrder {
 		if (toAccount == null) {
 			throw new IllegalArgumentException("To account code must not be null.");
 		}
+		this.code = code;
 		this.date = date;
 		this.fromAccount = fromAccount;
 		this.toAccount = toAccount;

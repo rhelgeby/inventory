@@ -4,6 +4,10 @@ import java.time.Instant;
 
 public class DraftOrder extends AbstractOrder {
 
+	public void setCode(OrderCode code) {
+		this.code = code;
+	}
+
 	public void setDate(Instant date) {
 		this.date = date;
 	}

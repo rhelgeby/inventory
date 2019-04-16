@@ -4,6 +4,8 @@ import java.time.Instant;
 
 public interface Order {
 
+	OrderCode getCode();
+
 	Instant getDate();
 
 	AccountCode getFromAccount();
