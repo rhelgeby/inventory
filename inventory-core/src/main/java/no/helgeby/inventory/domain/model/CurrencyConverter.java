@@ -1,15 +1,12 @@
 package no.helgeby.inventory.domain.model;
 
 import java.math.BigDecimal;
-import java.time.Instant;
 import java.util.Currency;
+
+import no.helgeby.inventory.domain.CurrencyException;
 
 public interface CurrencyConverter {
 
-	public BigDecimal convert(Currency from, Currency to, BigDecimal amount);
-
-	public BigDecimal convert(MonetaryAmount amount, Currency targetCurrency);
-
-	public BigDecimal convert(MonetaryAmount amount, Currency targetCurrency, Instant exchangeRateDate);
+	public BigDecimal convert(BigDecimal amount, Currency from, Currency to) throws CurrencyException;
 
 }
