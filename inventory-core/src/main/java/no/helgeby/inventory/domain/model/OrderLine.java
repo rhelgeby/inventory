@@ -2,6 +2,8 @@ package no.helgeby.inventory.domain.model;
 
 import java.math.BigDecimal;
 
+import javax.money.MonetaryAmount;
+
 public interface OrderLine {
 
 	OrderLineCode getCode();
@@ -10,7 +12,7 @@ public interface OrderLine {
 
 	BigDecimal getAmount();
 
-	SimpleMonetaryAmount getUnitPrice();
+	MonetaryAmount getUnitPrice();
 
 	String getNotes();
 

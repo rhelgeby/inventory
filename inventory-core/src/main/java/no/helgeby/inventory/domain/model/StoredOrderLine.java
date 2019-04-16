@@ -2,10 +2,12 @@ package no.helgeby.inventory.domain.model;
 
 import java.math.BigDecimal;
 
+import javax.money.MonetaryAmount;
+
 public abstract class StoredOrderLine extends AbstractOrderLine {
 
 	public StoredOrderLine(OrderLineCode code, ProductCode productCode, BigDecimal amount,
-			SimpleMonetaryAmount unitPrice, String notes) {
+			MonetaryAmount unitPrice, String notes) {
 		if (code == null) {
 			throw new IllegalArgumentException("Code must not be null.");
 		}

@@ -2,12 +2,14 @@ package no.helgeby.inventory.domain.model;
 
 import java.math.BigDecimal;
 
+import javax.money.MonetaryAmount;
+
 public abstract class AbstractOrderLine implements OrderLine {
 
 	protected OrderLineCode code;
 	protected ProductCode productCode;
 	protected BigDecimal amount;
-	protected SimpleMonetaryAmount unitPrice;
+	protected MonetaryAmount unitPrice;
 	protected String notes;
 
 	@Override
@@ -26,7 +28,7 @@ public abstract class AbstractOrderLine implements OrderLine {
 	}
 
 	@Override
-	public SimpleMonetaryAmount getUnitPrice() {
+	public MonetaryAmount getUnitPrice() {
 		return unitPrice;
 	}
 

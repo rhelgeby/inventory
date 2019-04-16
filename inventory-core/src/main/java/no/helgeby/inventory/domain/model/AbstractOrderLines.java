@@ -1,10 +1,13 @@
 package no.helgeby.inventory.domain.model;
 
 import java.util.Collections;
-import java.util.Currency;
 import java.util.List;
 
-import no.helgeby.inventory.domain.CurrencyException;
+import javax.money.CurrencyUnit;
+import javax.money.Monetary;
+import javax.money.MonetaryAmount;
+import javax.money.convert.CurrencyConversion;
+import javax.money.convert.MonetaryConversions;
 
 public abstract class AbstractOrderLines<T extends OrderLine> implements OrderLines {
 
@@ -16,16 +19,20 @@ public abstract class AbstractOrderLines<T extends OrderLine> implements OrderLi
 	}
 
 	@Override
-	public SimpleMonetaryAmount getTotalPrice(Currency targetCurrency, CurrencyConverter converter)
-			throws CurrencyException {
-		SimpleMonetaryAmount total = new SimpleMonetaryAmount(targetCurrency);
+	public MonetaryAmount getTotalPrice(CurrencyUnit targetCurrency) {
+		MonetaryAmount total = getZero(targetCurrency);
 
+		CurrencyConversion currencyConversion = MonetaryConversions.getConversion(targetCurrency);
 		for (OrderLine line : orderLines) {
-			SimpleMonetaryAmount unitPrice = line.getUnitPrice().as(targetCurrency, converter);
-			total = total.add(unitPrice.multiply(line.getAmount()));
+			MonetaryAmount convertedPrice = line.getUnitPrice().with(currencyConversion);
+			total = total.add(convertedPrice.multiply(line.getAmount()));
 		}
 
 		return total;
+	}
+
+	public static MonetaryAmount getZero(CurrencyUnit crrency) {
+		return Monetary.getDefaultAmountFactory().setCurrency(crrency).setNumber(0).create();
 	}
 
 }

@@ -2,6 +2,8 @@ package no.helgeby.inventory.domain.model;
 
 import java.math.BigDecimal;
 
+import javax.money.MonetaryAmount;
+
 public class DraftOrderLine extends AbstractOrderLine {
 
 	public void setCode(OrderLineCode code) {
@@ -16,7 +18,7 @@ public class DraftOrderLine extends AbstractOrderLine {
 		this.amount = amount;
 	}
 
-	public void setUnitPrice(SimpleMonetaryAmount unitPrice) {
+	public void setUnitPrice(MonetaryAmount unitPrice) {
 		this.unitPrice = unitPrice;
 	}
 
