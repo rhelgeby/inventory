@@ -10,4 +10,8 @@ public class ProductCode extends CodeIdentifier {
 	public String describe() {
 		return "product " + getCode();
 	}
+
+	public static ProductCode of(String code) {
+		return new ProductCode(code);
+	}
 }

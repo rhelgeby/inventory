@@ -11,4 +11,7 @@ public class OrderLineCode extends CodeIdentifier {
 		return "order line " + getCode();
 	}
 
+	public static OrderLineCode of(String code) {
+		return new OrderLineCode(code);
+	}
 }

@@ -18,3 +18,6 @@ target/
 .DS_Store
 
 inventory-console/dependency-reduced-pom.xml
+
+# Java Money API cache exchange rates
+.resourceCache
