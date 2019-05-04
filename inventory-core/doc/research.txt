@@ -1,0 +1,10 @@
+Event sourcing:
+https://github.com/andreschaffer/event-sourcing-cqrs-examples
+
+Immutable domain model with event sourcing:
+https://github.com/erikrozendaal/immutable-domain-example
+https://tech.zilverline.com/2011/02/01/towards-an-immutable-domain-model-introduction-part-1
+https://tech.zilverline.com/2011/02/02/towards-an-immutable-domain-model-immutable-change-part-2
+https://tech.zilverline.com/2011/02/05/towards-an-immutable-domain-model-immutability-achieved-part-3
+https://tech.zilverline.com/2011/02/07/towards-an-immutable-domain-model-believe-the-type-part-4
+https://tech.zilverline.com/2011/02/10/towards-an-immutable-domain-model-monads-part-5
