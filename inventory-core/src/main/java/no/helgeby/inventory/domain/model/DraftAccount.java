@@ -1,5 +1,9 @@
 package no.helgeby.inventory.domain.model;
 
+import java.time.Instant;
+
+import no.helgeby.inventory.domain.event.AccountCreatedEvent;
+
 public class DraftAccount extends AbstractAccount {
 
 	public void setCode(AccountCode code) {
@@ -14,7 +18,10 @@ public class DraftAccount extends AbstractAccount {
 		this.description = description;
 	}
 
-	public void enroll() {
-		// TODO: Create event in aggregate.
+	public AccountCreatedEvent enroll() {
+		// TODO: Validate what's needed to go from DraftAccount to a StoredAccount.
+		AccountCreatedEvent event = new AccountCreatedEvent(Instant.now(), this);
+		applyEvent(event);
+		return event;
 	}
 }
