@@ -1,6 +1,6 @@
 package no.helgeby.inventory.domain.model;
 
-public class AccountDraft extends AbstractAccount {
+public class DraftAccount extends AbstractAccount {
 
 	public void setCode(AccountCode code) {
 		this.code = code;
@@ -14,4 +14,7 @@ public class AccountDraft extends AbstractAccount {
 		this.description = description;
 	}
 
+	public void enroll() {
+		// TODO: Create event in aggregate.
+	}
 }
