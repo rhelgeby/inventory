@@ -1,6 +1,8 @@
 package no.helgeby.inventory.domain.model;
 
-public abstract class AbstractAccount implements Account {
+import no.helgeby.inventory.domain.Aggregate;
+
+public abstract class AbstractAccount extends Aggregate<AccountCode> implements Account {
 
 	protected AccountCode code;
 	protected String name;
